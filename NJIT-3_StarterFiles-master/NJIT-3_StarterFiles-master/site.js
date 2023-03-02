@@ -34,11 +34,23 @@ const vue_app = Vue.createApp({
             // This holds your movies.json data.
             movies: [],
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
+            title: "IMDB + Clara's Top 8 Movies",
+            owner: "Clara",
+            github: "https://523cs.github.io/NJIT-3/",
          
       }
     },
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+            let Month;
+            switch (getMonthText().dateArray() {
+                  case:0:
+                  Month = "January";
+                  break;
+                  case 1:
+                  Month = "February";
+                  break;
+            }
       }
 })
 
