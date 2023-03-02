@@ -24,34 +24,69 @@
 const vue_app = Vue.createApp({
       // This automatically imports your movies.json file and puts it into
       //   the variable: movies
-      created () {
+      created() {
             fetch('movies.json').then(response => response.json()).then(json => {
                   this.movies = json
             })
       },
       data() {
-        return {
-            // This holds your movies.json data.
-            movies: [],
-            /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-            title: "IMDB + Clara's Top 8 Movies",
-            owner: "Clara",
-            github: "https://523cs.github.io/NJIT-3/",
-         
-      }
-    },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-            let Month;
-            switch (getMonthText().dateArray() {
-                  case:0:
-                  Month = "January";
-                  break;
-                  case 1:
-                  Month = "February";
-                  break;
+            return {
+                  // This holds your movies.json data.
+                  movies: [],
+                  /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
+                  title: "IMDB + Chloe’s Top 8 Movies",
+                  owner: "Chloe Lee",
+                  github: "https://github.com/523ChloeL/NJIT-3",
             }
+      },
+      methods: {
+            getMonthText(dateArray) {
+                  let month = ""
+                  switch (dateArray[1]) {
+
+                        case 1:
+                              month = "January"
+                              break
+                        case 2:
+                              month = "February"
+                              break
+                        case 3:
+                              month = "March"
+                              break
+                        case 4:
+                              month = "April"
+                              break
+                        case 5:
+                              month = "May"
+                              break
+                        case 6:
+                              month = "June"
+                              break
+                        case 7:
+                              month = "July"
+                              break
+                        case 8:
+                              month = "August"
+                              break
+                        case 9:
+                              month = "September"
+                              break
+                        case 10:
+                              month = "October"
+                              break
+                        case 11:
+                              month = "November"
+                              break
+                        case 12:
+                              month = "December"
+                  }
+                  return month + " " + dateArray[2] + ", " + dateArray[0]
+            },
+            posterClick(index) {
+
+            }
+
+
       }
 })
-
 vue_app.mount("#vue_app")
