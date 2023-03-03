@@ -36,7 +36,6 @@ const vue_app = Vue.createApp({
                   /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
                   title: "IMDB + Clara's Top 8 Movies",
                   owner: "Clara Schepps",
-                  github: "https://523cs.github.io/NJIT-3/",
             }
       },
       methods: {
@@ -82,8 +81,16 @@ const vue_app = Vue.createApp({
                   }
                   return month + " " + dateArray[2] + ", " + dateArray[0]
             },
-            posterClick(index) {
-
+            posterClick(movie) {
+                  movie.posterindex++
+                  if (movie.posterindex > movie.posters.length - 1) {
+                        movie.posterindex = 0
+                  }
+            },
+            timeText(min) {
+                  let hours = Math.floor(min / 60)
+                  let minutes = min % 60
+                  return hours + 'h ' + minutes + 'm '
             }
 
 
